@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "877486279149",
+    "project_id": "electmange",
+    "storage_bucket": "electmange.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877486279149:android:02e7db303e69a0e83fffe4",
+        "android_client_info": {
+          "package_name": "com.example.electricity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "877486279149-0935biuv4d9d6gq50h5fa69c67qrpbdt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.electricity",
+            "certificate_hash": "e1665d632b0629e8c9a8f753c955b11f0ab1c7e0"
+          }
+        },
+        {
+          "client_id": "877486279149-o1e3fjcup4o648a4atucbaoavg1cnegh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhTEMqCXuX6besdhrYvNUVRMmFi2oo2cA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "877486279149-o1e3fjcup4o648a4atucbaoavg1cnegh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
