@@ -45,7 +45,7 @@ class _screenLogInState extends State<screenLogIn> {
         }
       }
     } else {
-      print("Not valid");
+      print("Not valid...");
       AwesomeDialog(
           context: context,
           dialogType: DialogType.ERROR,
