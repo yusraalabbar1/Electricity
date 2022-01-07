@@ -37,11 +37,11 @@ class _screenLogInState extends State<screenLogIn> {
         print("======================");
         if (a[i]['numberAcount'].toString() == numberAcount.toString() &&
             a[i]['password'].toString() == passWord.toString()) {
-          print("trueeeeeeeee");
+          print("true");
 
           Navigator.of(context).pushReplacementNamed("HomePage");
         } else {
-          print("falseeeeee");
+          print("false");
         }
       }
     } else {
