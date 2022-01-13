@@ -27,7 +27,6 @@ class MyApp extends StatelessWidget {
           "weekly": ((context) => weekly()),
           "monthly": ((context) => monthy()),
           "annual": ((context) => annual()),
-          // "dialog": ((context) => dialog()),
         });
   }
 

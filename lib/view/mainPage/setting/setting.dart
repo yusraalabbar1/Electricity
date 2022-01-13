@@ -10,7 +10,75 @@ class sitting extends StatefulWidget {
 class _sittingState extends State<sitting> {
   GlobalKey<ScaffoldState> scaffoldkey = new GlobalKey<ScaffoldState>();
   GlobalKey<FormState> formstate = new GlobalKey<FormState>();
-  var bill = "4000";
+  var bill = "2000";
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "setting",
+          style: Theme.of(context).appBarTheme.titleTextStyle,
+        ),
+      ),
+      body: ListView(
+        children: [
+          Card(
+              child: ListTile(
+            title: Text("Bill Limit"),
+            subtitle: Text("$bill"),
+            trailing: Image.asset("images/setting.PNG"),
+            leading: Icon(Icons.settings),
+            onTap: () {
+              // Navigator.of(context).pushNamed("dialog");
+              _showMyDialog();
+            },
+          )),
+          Card(
+              child: ListTile(
+            title: Text("Notification"),
+            subtitle: Text("ON"),
+            trailing: Image.asset("images/setting.PNG"),
+            leading: Icon(Icons.notification_add),
+            onTap: () {
+              setState(() {});
+            },
+          )),
+          Card(
+              child: ListTile(
+            title: Text("SMS notificatin"),
+            subtitle: Text("OFF"),
+            trailing: Image.asset("images/setting.PNG"),
+            leading: Icon(Icons.send_to_mobile),
+            onTap: () {
+              setState(() {});
+            },
+          )),
+          Card(
+              child: ListTile(
+            title: Text("Language"),
+            subtitle: Text("English"),
+            trailing: Image.asset("images/setting.PNG"),
+            leading: Icon(Icons.language),
+            onTap: () {
+              setState(() {});
+            },
+          )),
+          Card(
+              child: ListTile(
+            title: Text("Data Clear"),
+            subtitle: Text("samsung A20"),
+            trailing: Image.asset("images/setting.PNG"),
+            leading: Icon(Icons.delete),
+            onTap: () {
+              setState(() {});
+            },
+          )),
+        ],
+      ),
+    );
+  }
+
   Future<void> _showMyDialog() async {
     return showDialog(
         context: context,
@@ -102,72 +170,5 @@ class _sittingState extends State<sitting> {
             ),
           );
         });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "setting",
-          style: Theme.of(context).appBarTheme.titleTextStyle,
-        ),
-      ),
-      body: ListView(
-        children: [
-          Card(
-              child: ListTile(
-            title: Text("Bill Limit"),
-            subtitle: Text("2000"),
-            trailing: Image.asset("images/setting.PNG"),
-            leading: Icon(Icons.settings),
-            onTap: () {
-              // Navigator.of(context).pushNamed("dialog");
-              _showMyDialog();
-            },
-          )),
-          Card(
-              child: ListTile(
-            title: Text("Notification"),
-            subtitle: Text("ON"),
-            trailing: Image.asset("images/setting.PNG"),
-            leading: Icon(Icons.notification_add),
-            onTap: () {
-              setState(() {});
-            },
-          )),
-          Card(
-              child: ListTile(
-            title: Text("SMS notificatin"),
-            subtitle: Text("OFF"),
-            trailing: Image.asset("images/setting.PNG"),
-            leading: Icon(Icons.send_to_mobile),
-            onTap: () {
-              setState(() {});
-            },
-          )),
-          Card(
-              child: ListTile(
-            title: Text("Language"),
-            subtitle: Text("English"),
-            trailing: Image.asset("images/setting.PNG"),
-            leading: Icon(Icons.language),
-            onTap: () {
-              setState(() {});
-            },
-          )),
-          Card(
-              child: ListTile(
-            title: Text("Data Clear"),
-            subtitle: Text("samsung A20"),
-            trailing: Image.asset("images/setting.PNG"),
-            leading: Icon(Icons.delete),
-            onTap: () {
-              setState(() {});
-            },
-          )),
-        ],
-      ),
-    );
   }
 }
