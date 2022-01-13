@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:electricity/mainPage/statistic/chartFunction/valueChart.dart';
-import 'package:electricity/startSreen/logIn.dart';
+import 'package:electricity/mainPage/statistic/chartFunction/value_chart.dart';
 import 'package:flutter/material.dart';
 
 // import 'package:charts_flutter/flutter.dart';
@@ -28,7 +27,10 @@ class _statisticsState extends State<statistics> {
     var annual = 200;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Statistics"),
+        title: Text(
+          "Statistics",
+          style: Theme.of(context).appBarTheme.titleTextStyle,
+        ),
       ),
       body: ListView(
         children: [
@@ -48,9 +50,9 @@ class _statisticsState extends State<statistics> {
                         child: Container(
                           margin: EdgeInsets.all(20),
                           child: Text(
-                              "All numbers shown are in killowatt-hours",
-                              style: TextStyle(
-                                  color: Colors.grey[400], fontSize: 20)),
+                            "All numbers shown are in killowatt-hours",
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
                         ))
                   ],
                 )),
@@ -63,9 +65,10 @@ class _statisticsState extends State<statistics> {
                   children: [
                     Container(
                       margin: EdgeInsets.all(10),
-                      child: Text("daily",
-                          style:
-                              TextStyle(color: Colors.grey[600], fontSize: 20)),
+                      child: Text(
+                        "daily",
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
                     ),
                     PhysicalModel(
                       color: Colors.teal,
@@ -84,8 +87,7 @@ class _statisticsState extends State<statistics> {
                             child: Center(
                                 child: Text(
                               '$daily',
-                              style: TextStyle(
-                                  color: Color(0xff1C846B), fontSize: 40),
+                              style: Theme.of(context).textTheme.headline4,
                               textAlign: TextAlign.center,
                             )),
                           ),
@@ -101,9 +103,10 @@ class _statisticsState extends State<statistics> {
                   children: [
                     Container(
                       margin: EdgeInsets.all(10),
-                      child: Text("weekly",
-                          style:
-                              TextStyle(color: Colors.grey[600], fontSize: 20)),
+                      child: Text(
+                        "weekly",
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
                     ),
                     PhysicalModel(
                       color: Colors.teal,
@@ -122,8 +125,7 @@ class _statisticsState extends State<statistics> {
                             child: Center(
                                 child: Text(
                               '$weekly',
-                              style: TextStyle(
-                                  color: Color(0xff1C846B), fontSize: 40),
+                              style: Theme.of(context).textTheme.headline4,
                               textAlign: TextAlign.center,
                             )),
                           ),
@@ -143,9 +145,10 @@ class _statisticsState extends State<statistics> {
                   children: [
                     Container(
                       margin: EdgeInsets.all(10),
-                      child: Text("monthly",
-                          style:
-                              TextStyle(color: Colors.grey[600], fontSize: 20)),
+                      child: Text(
+                        "monthly",
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
                     ),
                     PhysicalModel(
                       color: Colors.teal,
@@ -164,8 +167,7 @@ class _statisticsState extends State<statistics> {
                             child: Center(
                                 child: Text(
                               '$monthly',
-                              style: TextStyle(
-                                  color: Color(0xff1C846B), fontSize: 40),
+                              style: Theme.of(context).textTheme.headline4,
                               textAlign: TextAlign.center,
                             )),
                           ),
@@ -181,9 +183,10 @@ class _statisticsState extends State<statistics> {
                   children: [
                     Container(
                       margin: EdgeInsets.all(10),
-                      child: Text("annual",
-                          style:
-                              TextStyle(color: Colors.grey[600], fontSize: 20)),
+                      child: Text(
+                        "annual",
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
                     ),
                     PhysicalModel(
                       color: Colors.teal,
@@ -202,8 +205,7 @@ class _statisticsState extends State<statistics> {
                             child: Center(
                                 child: Text(
                               '$annual',
-                              style: TextStyle(
-                                  color: Color(0xff1C846B), fontSize: 40),
+                              style: Theme.of(context).textTheme.headline4,
                               textAlign: TextAlign.center,
                             )),
                           ),

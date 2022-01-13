@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:electricity/startSreen/logIn.dart';
+import 'package:electricity/mainPage/startSreen/logIn.dart';
 
 List a = [];
 

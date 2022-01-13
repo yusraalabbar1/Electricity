@@ -12,7 +12,10 @@ class _sittingState extends State<sitting> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("setting"),
+        title: Text(
+          "setting",
+          style: Theme.of(context).appBarTheme.titleTextStyle,
+        ),
       ),
       body: ListView(
         children: [

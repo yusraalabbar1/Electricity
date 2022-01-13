@@ -24,10 +24,10 @@ class _ElectricConsumMonitorState extends State<ElectricConsumMonitor> {
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 5.2,
-        title: Text(" Electric Consumption Monitor",
-            style: TextStyle(color: Color(0xff21C49D), fontSize: 20)),
+        title: Text(
+          " Electric Consumption Monitor",
+          style: Theme.of(context).appBarTheme.titleTextStyle,
+        ),
       ),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
@@ -35,11 +35,10 @@ class _ElectricConsumMonitorState extends State<ElectricConsumMonitor> {
           Container(
               alignment: Alignment.topLeft,
               margin: EdgeInsets.all(20),
-              child: Text("current Consumption",
-                  style: TextStyle(
-                      color: Colors.grey[600],
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold))),
+              child: Text(
+                "current Consumption",
+                style: Theme.of(context).textTheme.headline6,
+              )),
           PhysicalModel(
             color: Colors.teal,
             elevation: 8,
@@ -55,7 +54,7 @@ class _ElectricConsumMonitorState extends State<ElectricConsumMonitor> {
                   child: Center(
                       child: Text(
                     '$current',
-                    style: TextStyle(color: Color(0xff21C49D), fontSize: 40),
+                    style: Theme.of(context).textTheme.headline3,
                     textAlign: TextAlign.center,
                   )),
                 ),
@@ -64,17 +63,18 @@ class _ElectricConsumMonitorState extends State<ElectricConsumMonitor> {
           ),
           Container(
             margin: EdgeInsets.all(10),
-            child: Text("k watt",
-                style: TextStyle(color: Color(0xff1C846B), fontSize: 20)),
+            child: Text(
+              "k watt",
+              style: Theme.of(context).textTheme.headline6,
+            ),
           ),
           Container(
             alignment: Alignment.topLeft,
             margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
-            child: Text("total Consumption sice the start",
-                style: TextStyle(
-                    color: Colors.grey[600],
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold)),
+            child: Text(
+              "total Consumption sice the start",
+              style: Theme.of(context).textTheme.headline6,
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -98,8 +98,7 @@ class _ElectricConsumMonitorState extends State<ElectricConsumMonitor> {
                             child: Center(
                                 child: Text(
                               '$totalWatt',
-                              style: TextStyle(
-                                  color: Color(0xff21C49D), fontSize: 40),
+                              style: Theme.of(context).textTheme.headline3,
                               textAlign: TextAlign.center,
                             )),
                           ),
@@ -108,9 +107,10 @@ class _ElectricConsumMonitorState extends State<ElectricConsumMonitor> {
                     ),
                     Container(
                       margin: EdgeInsets.all(10),
-                      child: Text("watt",
-                          style: TextStyle(
-                              color: Color(0xff1C846B), fontSize: 20)),
+                      child: Text(
+                        "watt",
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
                     )
                   ],
                 ),
@@ -134,7 +134,7 @@ class _ElectricConsumMonitorState extends State<ElectricConsumMonitor> {
                             child: Center(
                                 child: Text(
                               '$totalSy',
-                              style: TextStyle(color: Colors.red, fontSize: 40),
+                              style: TextStyle(color: Colors.red, fontSize: 48),
                               textAlign: TextAlign.center,
                             )),
                           ),
@@ -143,9 +143,10 @@ class _ElectricConsumMonitorState extends State<ElectricConsumMonitor> {
                     ),
                     Container(
                       margin: EdgeInsets.all(10),
-                      child: Text("sy",
-                          style: TextStyle(
-                              color: Color(0xff1C846B), fontSize: 20)),
+                      child: Text(
+                        "sy",
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
                     )
                   ],
                 ),

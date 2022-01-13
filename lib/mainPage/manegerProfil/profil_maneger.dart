@@ -47,15 +47,6 @@ class ListNote extends StatelessWidget {
                 child: TextFormField(
                   enabled: false,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(width: 1, color: Color(0xff27A2BB))),
-                    fillColor: Colors.white,
-                    hoverColor: Colors.white,
-                    filled: true,
-                    focusedBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xff27A2BB), width: 1.5)),
                     labelText: "${notes['firstName']}",
                   ),
                 ),
@@ -79,15 +70,6 @@ class ListNote extends StatelessWidget {
                 child: TextFormField(
                   enabled: false,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(width: 1, color: Color(0xff27A2BB))),
-                    fillColor: Colors.white,
-                    hoverColor: Colors.white,
-                    filled: true,
-                    focusedBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xff27A2BB), width: 1.5)),
                     labelText: "${notes['lastName']}",
                   ),
                 ),
@@ -111,15 +93,6 @@ class ListNote extends StatelessWidget {
                 child: TextFormField(
                   enabled: false,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(width: 1, color: Color(0xff27A2BB))),
-                    fillColor: Colors.white,
-                    hoverColor: Colors.white,
-                    filled: true,
-                    focusedBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xff27A2BB), width: 1.5)),
                     labelText: "${notes['email']}",
                   ),
                 ),
@@ -143,15 +116,6 @@ class ListNote extends StatelessWidget {
                 child: TextFormField(
                   enabled: false,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(width: 1, color: Color(0xff27A2BB))),
-                    fillColor: Colors.white,
-                    hoverColor: Colors.white,
-                    filled: true,
-                    focusedBorder: OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xff27A2BB), width: 1.5)),
                     labelText: "${notes['numberAcount']}",
                   ),
                 ),

@@ -83,6 +83,7 @@ class _screenLogInState extends State<screenLogIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff21C49D),
         elevation: 0.0,
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.exit_to_app))],
       ),
@@ -120,19 +121,10 @@ class _screenLogInState extends State<screenLogIn> {
                           Icons.format_list_numbered,
                           color: Color(0xff27A2BB),
                         ),
-                        border: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(width: 1, color: Color(0xff27A2BB))),
                         labelStyle: TextStyle(
                             color: myFocusNode.hasFocus
                                 ? Color(0xffFAB10C)
                                 : Colors.black),
-                        fillColor: Colors.white,
-                        hoverColor: Colors.white,
-                        filled: true,
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xff27A2BB), width: 1.5)),
                         labelText: " Number counter  ",
                       ),
                       // autovalidateMode: AutovalidateMode.always,
@@ -159,19 +151,10 @@ class _screenLogInState extends State<screenLogIn> {
                                 _isObscure = !_isObscure;
                               });
                             }),
-                        border: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(width: 1, color: Color(0xff27A2BB))),
                         labelStyle: TextStyle(
                             color: myFocusNode.hasFocus
                                 ? Color(0xffFAB10C)
                                 : Colors.black),
-                        fillColor: Colors.white,
-                        hoverColor: Colors.white,
-                        filled: true,
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color(0xff27A2BB), width: 1.5)),
                         labelText: " Password  ",
                       ),
                       // autovalidateMode: AutovalidateMode.always,

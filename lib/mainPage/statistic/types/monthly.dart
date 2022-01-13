@@ -1,12 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:electricity/mainPage/statistic/chartFunction/subscriber_chart.dart';
 import 'package:electricity/mainPage/statistic/chartFunction/subscriber_series.dart';
-import 'package:electricity/startSreen/logIn.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 
 import '../mainScreenStatistic/statistics.dart';
-import '../chartFunction/valueChart.dart';
+import '../chartFunction/value_chart.dart';
 
 class monthy extends StatefulWidget {
   monthy({Key? key}) : super(key: key);

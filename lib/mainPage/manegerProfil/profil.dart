@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:electricity/startSreen/logIn.dart';
+import 'package:electricity/mainPage/startSreen/logIn.dart';
 import 'package:flutter/material.dart';
 
-import 'profilManeger.dart';
+import 'profil_maneger.dart';
 
 class profil extends StatefulWidget {
   profil({Key? key}) : super(key: key);
@@ -24,7 +24,12 @@ class _profilState extends State<profil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(
+          " My Profile",
+          style: Theme.of(context).appBarTheme.titleTextStyle,
+        ),
+      ),
       body: StreamBuilder(
         stream: notesReference.snapshots(),
         // initialData: initialData,
