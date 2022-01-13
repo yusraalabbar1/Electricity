@@ -1,7 +1,8 @@
-import 'package:electricity/mainPage/startSreen/theme.dart';
+// import 'package:electricity/mainPage/setting/alert_dialog.dart';
+import 'package:electricity/main.dart';
+import 'package:electricity/view/mainPage/startSreen/theme.dart';
 import 'package:flutter/material.dart';
 
-import '../../main.dart';
 import '../Home_page.dart';
 import '../consumptionMain/Electric_consum_monitor.dart';
 import 'logIn.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
           "weekly": ((context) => weekly()),
           "monthly": ((context) => monthy()),
           "annual": ((context) => annual()),
+          // "dialog": ((context) => dialog()),
         });
   }
 

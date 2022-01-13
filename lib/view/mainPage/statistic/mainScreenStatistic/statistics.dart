@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:electricity/mainPage/statistic/chartFunction/value_chart.dart';
+import 'package:electricity/view/mainPage/statistic/chartFunction/value_chart.dart';
 import 'package:flutter/material.dart';
 
 // import 'package:charts_flutter/flutter.dart';

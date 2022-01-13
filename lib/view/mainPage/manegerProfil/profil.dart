@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:electricity/mainPage/startSreen/logIn.dart';
+import 'package:electricity/view/mainPage/startSreen/logIn.dart';
 import 'package:flutter/material.dart';
 
 import 'profil_maneger.dart';

@@ -1,7 +1,7 @@
-import 'package:electricity/mainPage/manegerProfil/profil.dart';
-import 'package:electricity/mainPage/setting/setting.dart';
-import 'package:electricity/mainPage/statistic/mainScreenStatistic/statistics.dart';
-import 'package:electricity/mainPage/turn/turnOnOff.dart';
+import 'package:electricity/view/mainPage/manegerProfil/profil.dart';
+import 'package:electricity/view/mainPage/setting/setting.dart';
+import 'package:electricity/view/mainPage/statistic/mainScreenStatistic/statistics.dart';
+import 'package:electricity/view/mainPage/turn/turnOnOff.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
