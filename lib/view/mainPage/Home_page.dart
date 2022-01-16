@@ -34,7 +34,6 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    // getData();
   }
 
   @override
@@ -77,18 +76,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      // floatingActionButtonLocation:
-      //     FloatingActionButtonLocation.miniCenterDocked,
-      // floatingActionButton: FloatingActionButton(
-      //   backgroundColor: Color(0xff21C49D),
-      //   onPressed: () {
-      //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(builder: (context) => ElectricConsumMonitor()),
-      //     );
-      //   },
-      //   child: Icon(Icons.add),
-      // )
     );
   }
 }

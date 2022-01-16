@@ -30,7 +30,6 @@ class _sittingState extends State<sitting> {
             trailing: Image.asset("images/setting.PNG"),
             leading: Icon(Icons.settings),
             onTap: () {
-              // Navigator.of(context).pushNamed("dialog");
               _showMyDialog();
             },
           )),

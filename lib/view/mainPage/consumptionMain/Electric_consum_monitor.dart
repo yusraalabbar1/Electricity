@@ -30,7 +30,6 @@ class _ElectricConsumMonitorState extends State<ElectricConsumMonitor> {
         ),
       ),
       body: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
               alignment: Alignment.topLeft,
@@ -72,7 +71,7 @@ class _ElectricConsumMonitorState extends State<ElectricConsumMonitor> {
             alignment: Alignment.topLeft,
             margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
             child: Text(
-              "total Consumption sice the start",
+              "total Consumption since the start",
               style: Theme.of(context).textTheme.headline6,
             ),
           ),
