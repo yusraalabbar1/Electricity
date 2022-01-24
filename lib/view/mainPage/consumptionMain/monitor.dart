@@ -1,33 +1,34 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:electricity/model/pref.dart';
+import 'package:electricity/view/mainPage/consumptionMain/value_monitor.dart';
 import 'package:electricity/view/mainPage/startSreen/logIn.dart';
 import 'package:flutter/material.dart';
 
-import 'profil_maneger.dart';
+import 'Electric_consum_monitor.dart';
 
-class profil extends StatefulWidget {
-  profil({Key? key}) : super(key: key);
+class monitor extends StatefulWidget {
+  monitor({Key? key}) : super(key: key);
 
   @override
-  _profilState createState() => _profilState();
+  State<monitor> createState() => _monitorState();
 }
 
-class _profilState extends State<profil> {
+class _monitorState extends State<monitor> {
   CollectionReference notesReference =
       FirebaseFirestore.instance.collection('informationUsers');
-
   @override
   void initState() {
     super.initState();
-    print(numberAcount);
+    getprefNumberAcount();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[50],
       appBar: AppBar(
         title: Text(
-          " My Profile",
+          " Electric Consumption Monitor",
           style: Theme.of(context).appBarTheme.titleTextStyle,
         ),
       ),
@@ -46,10 +47,9 @@ class _profilState extends State<profil> {
             itemBuilder: (BuildContext context, int index) {
               return Dismissible(
                   key: Key("$index"),
-                  child: ListNote(
+                  child: ElectricConsumMonitor(
                       notes: snapshot.data.docs[int.parse(numberAcount) - 1]
                           .data()));
-              //Text("${snapshot.data.docs[index].data()['firstName']}");
             },
           );
         },

@@ -1,12 +1,11 @@
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:electricity/model/pref.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
-
-import 'package:shared_preferences/shared_preferences.dart';
+import 'componentDialogAuth/dialogsUth.dart';
 
 var numberAcount;
-var isloginParf;
+List ids = [];
 
 class screenLogIn extends StatefulWidget {
   screenLogIn({Key? key}) : super(key: key);
@@ -18,10 +17,10 @@ class screenLogIn extends StatefulWidget {
 class _screenLogInState extends State<screenLogIn> {
   GlobalKey<ScaffoldState> scaffoldkey = new GlobalKey<ScaffoldState>();
   GlobalKey<FormState> formstate = new GlobalKey<FormState>();
-  // var numberAcount;
   bool _isObscure = true;
   var passWord;
   List a = [];
+
   FocusNode myFocusNode = new FocusNode();
   Future send() async {
     var formdata = formstate.currentState;
@@ -33,30 +32,23 @@ class _screenLogInState extends State<screenLogIn> {
         print("======================");
         print(numberAcount);
         print(a[i]['numberAcount']);
-
         print("======================");
-        if (a[i]['numberAcount'].toString() == numberAcount.toString() &&
-            a[i]['password'].toString() == passWord.toString()) {
+        if (a[i]['numberAcount'].toString() == numberAcount.toString()) {
           print("true");
-
-          Navigator.of(context).pushReplacementNamed("HomePage");
+          if (a[i]['password'].toString() == passWord.toString()) {
+            await savepref();
+            await saveprefNumberAcount();
+            Navigator.of(context).pushReplacementNamed("HomePage");
+          } else {
+            dialogePasswordFalse(context);
+          }
         } else {
           print("false");
         }
       }
     } else {
       print("Not valid...");
-      AwesomeDialog(
-          context: context,
-          dialogType: DialogType.ERROR,
-          animType: AnimType.RIGHSLIDE,
-          headerAnimationLoop: true,
-          title: 'Error',
-          desc: 'Informaton is false',
-          btnOkOnPress: () {},
-          btnOkIcon: Icons.cancel,
-          btnOkColor: Colors.red)
-        ..show();
+      dialogeInfoFalse(context);
     }
   }
 
@@ -66,9 +58,13 @@ class _screenLogInState extends State<screenLogIn> {
         .snapshots()
         .listen((event) {
       event.docs.forEach((element) {
+        ids.add(element.id);
         a.add(element.data());
-        print(element.data());
       });
+      print("================================");
+      print(a);
+      print(ids);
+      print("================================");
     });
   }
 

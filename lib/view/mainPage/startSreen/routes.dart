@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: islogin == false ? screenLogIn() : HomePage(),
+        home: login == false ? screenLogIn() : HomePage(),
         theme: CustomTheme.lightTheme,
         routes: {
           "screenLogIn": ((context) => screenLogIn()),

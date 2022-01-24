@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'consumptionMain/Electric_consum_monitor.dart';
+import 'consumptionMain/monitor.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _widgetOptions = <Widget>[
     turnOnOff(),
     statistics(),
-    ElectricConsumMonitor(),
+    monitor(),
     profil(),
     sitting(),
   ];
