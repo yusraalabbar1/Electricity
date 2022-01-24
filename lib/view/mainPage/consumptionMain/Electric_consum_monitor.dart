@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:electricity/model/pref.dart';
+import 'package:electricity/view/mainPage/consumptionMain/monitor.dart';
 import 'package:electricity/view/mainPage/consumptionMain/value_monitor.dart';
 import 'package:flutter/material.dart';
 
@@ -87,7 +88,7 @@ class ElectricConsumMonitor extends StatelessWidget {
                           width: 140.0,
                           child: Center(
                               child: Text(
-                            '${total[0]["totalConsy"]}',
+                            'hh',
                             style: Theme.of(context).textTheme.headline3,
                             textAlign: TextAlign.center,
                           )),
@@ -123,7 +124,7 @@ class ElectricConsumMonitor extends StatelessWidget {
                           width: 140.0,
                           child: Center(
                               child: Text(
-                            '${total[0]["totalConwatt"]}',
+                            'rr',
                             style: TextStyle(color: Colors.red, fontSize: 48),
                             textAlign: TextAlign.center,
                           )),

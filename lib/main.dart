@@ -14,12 +14,9 @@ void main() async {
   await Firebase.initializeApp();
 
   var user = FirebaseAuth.instance.currentUser;
-  final v = valueMonitor();
   print("****************************");
   await getpref();
   print("****************************");
-  v.nastedupdateCollectionCurrent();
-  v.nastedupdateCollectionTotal();
   if (islogin == "true") {
     login = true;
   } else {

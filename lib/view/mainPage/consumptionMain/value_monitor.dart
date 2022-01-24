@@ -1,42 +1,41 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:electricity/model/pref.dart';
-import 'package:electricity/view/mainPage/startSreen/logIn.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:electricity/model/pref.dart';
+// import 'package:electricity/view/mainPage/startSreen/logIn.dart';
 
-List curr = [];
-List total = [];
+// List curr = [];
+// List total = [];
+// CollectionReference c = FirebaseFirestore.instance
+//     .collection('informationUsers')
+//     .doc("3s2luIgG6maTDWcRJhnp")
+//     .collection("currentConsumption");
 
-class valueMonitor {
-  CollectionReference c = FirebaseFirestore.instance
-      .collection('informationUsers')
-      .doc("3s2luIgG6maTDWcRJhnp")
-      .collection("currentConsumption");
+// CollectionReference t = FirebaseFirestore.instance
+//     .collection('informationUsers')
+//     .doc("3s2luIgG6maTDWcRJhnp")
+//     .collection("totalConsumption");
 
-  CollectionReference t = FirebaseFirestore.instance
-      .collection('informationUsers')
-      .doc("3s2luIgG6maTDWcRJhnp")
-      .collection("totalConsumption");
+// class valueMonitor {
+//   nastedupdateCollectionCurrent() {
+//     c.doc("YFfXsyQxq4LqabaJDmBQ").get().then((value) {
+//       if (value.exists) {
+//         print('Document data: ${value.data}');
 
-  nastedupdateCollectionCurrent() {
-    c.doc("YFfXsyQxq4LqabaJDmBQ").get().then((value) {
-      if (value.exists) {
-        print('Document data: ${value.data}');
+//         curr.add(value.data());
+//       } else {
+//         print('Document does not exist on the database');
+//       }
+//     });
+//   }
 
-        curr.add(value.data());
-      } else {
-        print('Document does not exist on the database');
-      }
-    });
-  }
+//   nastedupdateCollectionTotal() {
+//     t.doc("eUMklEfcmI4yGMdlRaF9").get().then((value) {
+//       if (value.exists) {
+//         print('Document data: ${value.data}');
 
-  nastedupdateCollectionTotal() {
-    t.doc("eUMklEfcmI4yGMdlRaF9").get().then((value) {
-      if (value.exists) {
-        print('Document data: ${value.data}');
-
-        total.add(value.data());
-      } else {
-        print('Document does not exist on the database');
-      }
-    });
-  }
-}
+//         total.add(value.data());
+//       } else {
+//         print('Document does not exist on the database');
+//       }
+//     });
+//   }
+// }
