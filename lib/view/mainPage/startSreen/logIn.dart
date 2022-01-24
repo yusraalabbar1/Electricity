@@ -81,7 +81,6 @@ class _screenLogInState extends State<screenLogIn> {
       appBar: AppBar(
         backgroundColor: Color(0xff21C49D),
         elevation: 0.0,
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.exit_to_app))],
       ),
       body: ListView(
         children: <Widget>[

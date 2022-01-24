@@ -14,8 +14,12 @@ class monitor extends StatefulWidget {
 }
 
 class _monitorState extends State<monitor> {
-  CollectionReference notesReference =
-      FirebaseFirestore.instance.collection('informationUsers');
+  // CollectionReference notesReference =
+  //     FirebaseFirestore.instance.collection('informationUsers');
+  CollectionReference c = FirebaseFirestore.instance
+      .collection('informationUsers')
+      .doc("3s2luIgG6maTDWcRJhnp")
+      .collection("currentConsumption");
   @override
   void initState() {
     super.initState();
@@ -33,7 +37,7 @@ class _monitorState extends State<monitor> {
         ),
       ),
       body: StreamBuilder(
-        stream: notesReference.snapshots(),
+        stream: c.snapshots(),
         // initialData: initialData,
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.hasError) {

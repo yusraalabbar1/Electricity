@@ -43,7 +43,7 @@ class ElectricConsumMonitor extends StatelessWidget {
                 width: 140.0,
                 child: Center(
                     child: Text(
-                  '${curr[0]["currentCon"]}',
+                  '${notes["currentCon"]}',
                   style: Theme.of(context).textTheme.headline3,
                   textAlign: TextAlign.center,
                 )),
