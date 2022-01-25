@@ -1,20 +1,26 @@
+import 'package:electricity/view/mainPage/consumptionMain/value_monitor.dart';
 import 'package:electricity/view/mainPage/startSreen/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
+import 'model/pref.dart';
+
 var select = 1;
-bool islogin = false;
+bool login = false;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp();
 
   var user = FirebaseAuth.instance.currentUser;
-  if (user == null) {
-    islogin = false;
+  print("****************************");
+  await getpref();
+  print("****************************");
+  if (islogin == "true") {
+    login = true;
   } else {
-    islogin = true;
+    login = false;
   }
   runApp(MyApp());
 }

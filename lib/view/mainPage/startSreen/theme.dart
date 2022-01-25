@@ -7,6 +7,7 @@ abstract class CustomTheme {
         primarySwatch: Colors.teal,
         fontFamily: 'Mukta',
         buttonColor: Color(0xff21C49D),
+
         /////////////////////////////////////
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.white,
