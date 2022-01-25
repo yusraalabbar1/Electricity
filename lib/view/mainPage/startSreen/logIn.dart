@@ -1,5 +1,7 @@
+//import 'package:Electricity/model/pref.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:electricity/model/pref.dart';
+//import 'package:electricity/model/pref.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'componentDialogAuth/dialogsUth.dart';

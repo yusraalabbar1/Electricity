@@ -1,4 +1,5 @@
 import 'package:electricity/view/mainPage/statistic/chartFunction/subscriber_series.dart';
+//import 'package:electricity/view/mainPage/statistic/chartFunction/subscriber_series.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 

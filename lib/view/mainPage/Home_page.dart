@@ -1,7 +1,7 @@
-import 'package:electricity/view/mainPage/manegerProfil/profil.dart';
-import 'package:electricity/view/mainPage/setting/setting.dart';
-import 'package:electricity/view/mainPage/statistic/mainScreenStatistic/statistics.dart';
-import 'package:electricity/view/mainPage/turn/turnOnOff.dart';
+// import 'package:electricity/view/mainPage/manegerProfil/profil.dart';
+// import 'package:electricity/view/mainPage/setting/setting.dart';
+// import 'package:electricity/view/mainPage/statistic/mainScreenStatistic/statistics.dart';
+// import 'package:electricity/view/mainPage/turn/turnOnOff.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +9,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'consumptionMain/Electric_consum_monitor.dart';
 import 'consumptionMain/monitor.dart';
+import 'manegerProfil/profil.dart';
+import 'setting/setting.dart';
+import 'statistic/mainScreenStatistic/statistics.dart';
+import 'turn/turnOnOff.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);

@@ -131,7 +131,9 @@ class ListNote extends StatelessWidget {
                   child: Container(
                       margin: EdgeInsets.all(30),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).pushNamed("contactUs");
+                        },
                         child: Text("contact us",
                             style: TextStyle(
                                 color: Color(0xff1C846B), fontSize: 15)),
