@@ -1,21 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:electricity/model/pref.dart';
 import 'package:electricity/view/mainPage/consumptionMain/model_physical.dart';
-import 'package:electricity/view/mainPage/consumptionMain/monitor.dart';
-import 'package:electricity/view/mainPage/consumptionMain/value_monitor.dart';
 import 'package:flutter/material.dart';
 
-/*
-class ElectricConsumMonitor extends StatefulWidget {
-  final notes;
-  ElectricConsumMonitor({this.notes});
-
-  @override
-  _ElectricConsumMonitorState createState() => _ElectricConsumMonitorState();
-}
-
-class _ElectricConsumMonitorState extends State<ElectricConsumMonitor> {
-  */
 class ElectricConsumMonitor extends StatelessWidget {
   final notes;
   ElectricConsumMonitor({this.notes});
