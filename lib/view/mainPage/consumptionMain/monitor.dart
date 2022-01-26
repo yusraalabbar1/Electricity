@@ -33,7 +33,6 @@ class _monitorState extends State<monitor> {
       ),
       body: StreamBuilder(
         stream: t.snapshots(),
-        // initialData: initialData,
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.hasError) {
             return Text("Error");

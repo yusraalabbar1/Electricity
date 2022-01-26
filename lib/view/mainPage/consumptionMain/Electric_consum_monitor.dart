@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:electricity/model/pref.dart';
+import 'package:electricity/view/mainPage/consumptionMain/model_physical.dart';
 import 'package:electricity/view/mainPage/consumptionMain/monitor.dart';
 import 'package:electricity/view/mainPage/consumptionMain/value_monitor.dart';
 import 'package:flutter/material.dart';
@@ -30,28 +31,7 @@ class ElectricConsumMonitor extends StatelessWidget {
               "current Consumption",
               style: Theme.of(context).textTheme.headline6,
             )),
-        PhysicalModel(
-          color: Colors.teal,
-          elevation: 8,
-          shadowColor: Colors.grey,
-          borderRadius: BorderRadius.circular(100),
-          child: GestureDetector(
-            onTap: () {},
-            child: ClipOval(
-              child: Container(
-                color: Colors.white,
-                height: 140.0,
-                width: 140.0,
-                child: Center(
-                    child: Text(
-                  '${notes["currentCon"]}',
-                  style: Theme.of(context).textTheme.headline3,
-                  textAlign: TextAlign.center,
-                )),
-              ),
-            ),
-          ),
-        ),
+        physicalModel(context, notes["currentCon"], Colors.teal),
         Container(
           margin: EdgeInsets.all(10),
           child: Text(
@@ -74,28 +54,7 @@ class ElectricConsumMonitor extends StatelessWidget {
               flex: 1,
               child: Column(
                 children: [
-                  PhysicalModel(
-                    color: Colors.teal,
-                    elevation: 8,
-                    shadowColor: Colors.grey,
-                    borderRadius: BorderRadius.circular(100),
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: ClipOval(
-                        child: Container(
-                          color: Colors.white,
-                          height: 140.0,
-                          width: 140.0,
-                          child: Center(
-                              child: Text(
-                            '${notes["totalConsy"]}',
-                            style: Theme.of(context).textTheme.headline3,
-                            textAlign: TextAlign.center,
-                          )),
-                        ),
-                      ),
-                    ),
-                  ),
+                  physicalModel(context, notes["totalConsy"], Colors.teal),
                   Container(
                     margin: EdgeInsets.all(10),
                     child: Text(
