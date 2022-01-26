@@ -14,43 +14,6 @@ class monitor extends StatefulWidget {
 }
 
 class _monitorState extends State<monitor> {
-  List total = [];
-  // List curr = [];
-  // CollectionReference c = FirebaseFirestore.instance
-  //     .collection('informationUsers')
-  //     .doc("3s2luIgG6maTDWcRJhnp")
-  //     .collection("currentConsumption");
-
-  CollectionReference t = FirebaseFirestore.instance
-      .collection('informationUsers')
-      .doc("3s2luIgG6maTDWcRJhnp")
-      .collection("totalConsumption");
-
-  nastedupdateCollectionTotal() async {
-    await t.doc("eUMklEfcmI4yGMdlRaF9").get().then((value) {
-      if (value.exists) {
-        print('Document data: ${value.data}');
-
-        total.add(value.data());
-      } else {
-        print('Document does not exist on the database');
-      }
-    });
-  }
-
-  // nastedupdateCollectionCurrent() async {
-  //   await c.doc("YFfXsyQxq4LqabaJDmBQ").get().then((value) {
-  //     if (value.exists) {
-
-  //       print('Document data: ${value.data}');
-
-  //       curr.add(value.data());
-  //     } else {
-  //       print('Document does not exist on the database');
-  //     }
-  //   });
-  // }
-
   @override
   void initState() {
     super.initState();
