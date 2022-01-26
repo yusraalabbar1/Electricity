@@ -88,7 +88,7 @@ class ElectricConsumMonitor extends StatelessWidget {
                           width: 140.0,
                           child: Center(
                               child: Text(
-                            'hh',
+                            '${notes["totalConsy"]}',
                             style: Theme.of(context).textTheme.headline3,
                             textAlign: TextAlign.center,
                           )),
@@ -124,7 +124,7 @@ class ElectricConsumMonitor extends StatelessWidget {
                           width: 140.0,
                           child: Center(
                               child: Text(
-                            'rr',
+                            '${notes["totalConwatt"]}',
                             style: TextStyle(color: Colors.red, fontSize: 48),
                             textAlign: TextAlign.center,
                           )),

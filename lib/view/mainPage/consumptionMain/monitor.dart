@@ -15,11 +15,11 @@ class monitor extends StatefulWidget {
 
 class _monitorState extends State<monitor> {
   List total = [];
-  List curr = [];
-  CollectionReference c = FirebaseFirestore.instance
-      .collection('informationUsers')
-      .doc("3s2luIgG6maTDWcRJhnp")
-      .collection("currentConsumption");
+  // List curr = [];
+  // CollectionReference c = FirebaseFirestore.instance
+  //     .collection('informationUsers')
+  //     .doc("3s2luIgG6maTDWcRJhnp")
+  //     .collection("currentConsumption");
 
   CollectionReference t = FirebaseFirestore.instance
       .collection('informationUsers')
@@ -38,17 +38,18 @@ class _monitorState extends State<monitor> {
     });
   }
 
-  nastedupdateCollectionCurrent() async {
-    await c.doc("YFfXsyQxq4LqabaJDmBQ").get().then((value) {
-      if (value.exists) {
-        print('Document data: ${value.data}');
+  // nastedupdateCollectionCurrent() async {
+  //   await c.doc("YFfXsyQxq4LqabaJDmBQ").get().then((value) {
+  //     if (value.exists) {
 
-        curr.add(value.data());
-      } else {
-        print('Document does not exist on the database');
-      }
-    });
-  }
+  //       print('Document data: ${value.data}');
+
+  //       curr.add(value.data());
+  //     } else {
+  //       print('Document does not exist on the database');
+  //     }
+  //   });
+  // }
 
   @override
   void initState() {
@@ -68,7 +69,7 @@ class _monitorState extends State<monitor> {
         ),
       ),
       body: StreamBuilder(
-        stream: c.snapshots(),
+        stream: t.snapshots(),
         // initialData: initialData,
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.hasError) {
