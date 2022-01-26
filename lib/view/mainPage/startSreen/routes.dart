@@ -3,6 +3,8 @@ import 'package:electricity/main.dart';
 import 'package:electricity/view/mainPage/startSreen/theme.dart';
 import 'package:flutter/material.dart';
 
+import 'package:get/get.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import '../Home_page.dart';
 import '../consumptionMain/Electric_consum_monitor.dart';
 import 'logIn.dart';
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         home: login == false ? screenLogIn() : HomePage(),
         theme: CustomTheme.lightTheme,

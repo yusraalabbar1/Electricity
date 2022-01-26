@@ -1,8 +1,12 @@
+import 'package:electricity/controller/control.dart';
 import 'package:flutter/material.dart';
+
+import 'package:get/get.dart';
 
 var bill = "2000";
 
 GlobalKey<FormState> formstate = new GlobalKey<FormState>();
+homecontroller controller = Get.find();
 showLoading(context) {
   return showDialog(
       context: context,
@@ -45,6 +49,7 @@ showLoading(context) {
                               decoration: InputDecoration(hintText: "$bill"),
                               onSaved: (string) {
                                 bill = string!;
+                                controller.changeBill();
                               },
                             ),
                           ),
