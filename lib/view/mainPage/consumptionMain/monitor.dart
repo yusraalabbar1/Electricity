@@ -18,7 +18,7 @@ class _monitorState extends State<monitor> {
   void initState() {
     super.initState();
     getprefNumberAcount();
-    nastedupdateCollectionTotal();
+    // nastedupdateCollectionTotal();
   }
 
   @override

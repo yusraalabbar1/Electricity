@@ -83,7 +83,7 @@ class _sittingState extends State<sitting> {
           Card(
               child: ListTile(
             title: Text("Data Clear"),
-            subtitle: Text("samsung A20"),
+            subtitle: Text("clear.."),
             trailing: Image.asset("images/setting.PNG"),
             leading: Icon(Icons.delete),
             onTap: () {

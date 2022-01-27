@@ -1,3 +1,4 @@
+import 'package:electricity/model/pref.dart';
 import 'package:flutter/material.dart';
 
 class ListNote extends StatelessWidget {
@@ -143,7 +144,11 @@ class ListNote extends StatelessWidget {
                 child: Container(
                     margin: EdgeInsets.all(30),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        islogin = "false";
+                        Navigator.of(context)
+                            .pushReplacementNamed("screenLogIn");
+                      },
                       child: Text("SignUp",
                           style: TextStyle(
                               color: Color(0xff1C846B), fontSize: 15)),
