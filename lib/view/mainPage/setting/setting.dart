@@ -18,6 +18,7 @@ class sitting extends StatefulWidget {
 
 class _sittingState extends State<sitting> {
   GlobalKey<ScaffoldState> scaffoldkey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
