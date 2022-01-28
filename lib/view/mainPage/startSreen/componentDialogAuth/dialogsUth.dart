@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 
 dialogePasswordFalse(context) {
@@ -8,8 +8,8 @@ dialogePasswordFalse(context) {
       dialogType: DialogType.ERROR,
       animType: AnimType.RIGHSLIDE,
       headerAnimationLoop: true,
-      title: 'Error',
-      desc: 'password is false',
+      title: 'Error'.tr,
+      desc: 'password is false'.tr,
       btnOkOnPress: () {},
       btnOkIcon: Icons.cancel,
       btnOkColor: Colors.red)
@@ -22,8 +22,8 @@ dialogeInfoFalse(context) {
       dialogType: DialogType.ERROR,
       animType: AnimType.RIGHSLIDE,
       headerAnimationLoop: true,
-      title: 'Error',
-      desc: 'Informaton is false',
+      title: 'Error'.tr,
+      desc: 'Informaton is false'.tr,
       btnOkOnPress: () {},
       btnOkIcon: Icons.cancel,
       btnOkColor: Colors.red)

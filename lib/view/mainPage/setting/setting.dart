@@ -4,6 +4,7 @@ import 'component_dialge/dialog_bill.dart';
 import 'component_dialge/dialog_notifcation.dart';
 import 'component_dialge/dialogeSms.dart';
 import 'component_dialge/dialoge_language.dart';
+import 'package:get/get.dart';
 
 class sitting extends StatefulWidget {
   sitting({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _sittingState extends State<sitting> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "setting",
+          "Settings".tr,
           style: Theme.of(context).appBarTheme.titleTextStyle,
         ),
       ),
@@ -28,7 +29,7 @@ class _sittingState extends State<sitting> {
         children: [
           Card(
               child: ListTile(
-            title: Text("Bill Limit"),
+            title: Text("Bill Limit".tr),
             subtitle: Text("$bill"),
             trailing: Image.asset("images/setting.PNG"),
             leading: Icon(Icons.settings),
@@ -38,7 +39,7 @@ class _sittingState extends State<sitting> {
           )),
           Card(
               child: ListTile(
-            title: Text("Notification"),
+            title: Text("Notification".tr),
             subtitle: Text("ON"),
             trailing: Image.asset("images/setting.PNG"),
             leading: Icon(Icons.notification_add),
@@ -50,7 +51,7 @@ class _sittingState extends State<sitting> {
           )),
           Card(
               child: ListTile(
-            title: Text("SMS notificatin"),
+            title: Text("SMS notificatin".tr),
             subtitle: Text("OFF"),
             trailing: Image.asset("images/setting.PNG"),
             leading: Icon(Icons.send_to_mobile),
@@ -62,8 +63,8 @@ class _sittingState extends State<sitting> {
           )),
           Card(
               child: ListTile(
-            title: Text("Language"),
-            subtitle: Text("English"),
+            title: Text("Language".tr),
+            subtitle: Text("English & Arabic".tr),
             trailing: Image.asset("images/setting.PNG"),
             leading: Icon(Icons.language),
             onTap: () {
@@ -74,7 +75,7 @@ class _sittingState extends State<sitting> {
           )),
           Card(
               child: ListTile(
-            title: Text("Data Clear"),
+            title: Text("Clear Data".tr),
             subtitle: Text("samsung A20"),
             trailing: Image.asset("images/setting.PNG"),
             leading: Icon(Icons.delete),

@@ -1,5 +1,9 @@
+import 'package:electricity/translation/app_languge_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:get/get.dart';
+
+AppLanguage langControl = Get.find();
 
 dialogLang(context) {
   return showDialog(
@@ -9,20 +13,26 @@ dialogLang(context) {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text("Choose The Language"),
+              Text("Choose The Language".tr),
               Center(
                 child: Row(
                   children: [
-                    RaisedButton(
-                      child: Text("Arabic"),
-                      onPressed: () {},
+                    MaterialButton(
+                      child: Text("العربية"),
+                      onPressed: () {
+                        langControl.changeLanguage('ar');
+                        Navigator.of(context).pop();
+                      },
                     ),
                     SizedBox(
                       width: 10,
                     ),
-                    RaisedButton(
+                    MaterialButton(
                       child: Text("English"),
-                      onPressed: () {},
+                      onPressed: () {
+                        langControl.changeLanguage('en');
+                        Navigator.of(context).pop();
+                      },
                     ),
                   ],
                 ),

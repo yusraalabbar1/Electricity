@@ -5,6 +5,7 @@ import 'package:electricity/model/pref.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'componentDialogAuth/dialogsUth.dart';
+import 'package:get/get.dart';
 
 var numberAcount;
 List ids = [];
@@ -122,7 +123,7 @@ class _screenLogInState extends State<screenLogIn> {
                             color: myFocusNode.hasFocus
                                 ? Color(0xffFAB10C)
                                 : Colors.black),
-                        labelText: " Number counter  ",
+                        labelText: "Counter Number".tr,
                       ),
                       // autovalidateMode: AutovalidateMode.always,
 
@@ -152,7 +153,7 @@ class _screenLogInState extends State<screenLogIn> {
                             color: myFocusNode.hasFocus
                                 ? Color(0xffFAB10C)
                                 : Colors.black),
-                        labelText: " Password  ",
+                        labelText: "Password".tr,
                       ),
                       // autovalidateMode: AutovalidateMode.always,
 
@@ -176,7 +177,7 @@ class _screenLogInState extends State<screenLogIn> {
                 //
               },
               child: Text(
-                "Log In",
+                "Log In".tr,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,

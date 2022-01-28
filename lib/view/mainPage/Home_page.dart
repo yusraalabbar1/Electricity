@@ -2,8 +2,10 @@
 // import 'package:electricity/view/mainPage/setting/setting.dart';
 // import 'package:electricity/view/mainPage/statistic/mainScreenStatistic/statistics.dart';
 // import 'package:electricity/view/mainPage/turn/turnOnOff.dart';
+import 'package:electricity/translation/app_languge_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -16,7 +18,7 @@ import 'turn/turnOnOff.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
-
+  AppLanguage appLanguage = Get.put(AppLanguage());
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -60,23 +62,23 @@ class _HomePageState extends State<HomePage> {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.radio_button_on_outlined),
-              label: 'turn',
+              label: 'turn'.tr,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.analytics_sharp),
-              label: 'statistics',
+              label: 'statistics'.tr,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: 'Home',
+              label: 'Home'.tr,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              label: 'profil',
+              label: 'profil'.tr,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
-              label: 'sitting',
+              label: 'sitting'.tr,
             ),
           ],
         ),

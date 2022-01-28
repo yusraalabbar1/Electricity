@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:get/get.dart';
 
 dialogeClear(context) {
   AwesomeDialog(
@@ -10,8 +11,8 @@ dialogeClear(context) {
     buttonsBorderRadius: BorderRadius.all(Radius.circular(2)),
     headerAnimationLoop: false,
     animType: AnimType.BOTTOMSLIDE,
-    title: 'Clear informaion',
-    desc: 'Do you to clear all information???',
+    title: 'Clear Data'.tr,
+    desc: 'Do you want to clear all information???'.tr,
     showCloseIcon: true,
     btnCancelOnPress: () {},
     btnOkOnPress: () {

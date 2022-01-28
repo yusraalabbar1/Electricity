@@ -2,7 +2,7 @@ import 'package:electricity/view/mainPage/statistic/chartFunction/value_chart.da
 import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:electricity/view/mainPage/statistic/chartFunction/value_chart.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 // import 'package:charts_flutter/flutter.dart';
 
 class statistics extends StatefulWidget {
@@ -29,7 +29,7 @@ class _statisticsState extends State<statistics> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Statistics",
+          "statistics".tr,
           style: Theme.of(context).appBarTheme.titleTextStyle,
         ),
       ),
@@ -51,7 +51,7 @@ class _statisticsState extends State<statistics> {
                         child: Container(
                           margin: EdgeInsets.all(20),
                           child: Text(
-                            "All numbers shown are in killowatt-hours",
+                            "All numbers shown are in killowatt-hours".tr,
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ))
@@ -67,7 +67,7 @@ class _statisticsState extends State<statistics> {
                     Container(
                       margin: EdgeInsets.all(10),
                       child: Text(
-                        "daily",
+                        "daily".tr,
                         style: Theme.of(context).textTheme.headline6,
                       ),
                     ),
@@ -105,7 +105,7 @@ class _statisticsState extends State<statistics> {
                     Container(
                       margin: EdgeInsets.all(10),
                       child: Text(
-                        "weekly",
+                        "weekly".tr,
                         style: Theme.of(context).textTheme.headline6,
                       ),
                     ),
@@ -147,7 +147,7 @@ class _statisticsState extends State<statistics> {
                     Container(
                       margin: EdgeInsets.all(10),
                       child: Text(
-                        "monthly",
+                        "monthly".tr,
                         style: Theme.of(context).textTheme.headline6,
                       ),
                     ),
@@ -185,7 +185,7 @@ class _statisticsState extends State<statistics> {
                     Container(
                       margin: EdgeInsets.all(10),
                       child: Text(
-                        "annual",
+                        "annual".tr,
                         style: Theme.of(context).textTheme.headline6,
                       ),
                     ),

@@ -1,9 +1,11 @@
 // import 'package:electricity/mainPage/setting/alert_dialog.dart';
+import 'package:electricity/translation/translation.dart';
 import 'package:electricity/view/mainPage/contact/contact.dart';
 import 'package:electricity/view/mainPage/startSreen/theme.dart';
 //import 'package:electricity/main.dart';
 //import 'package:electricity/view/mainPage/startSreen/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../main.dart';
 import '../Home_page.dart';
@@ -18,20 +20,25 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: login == false ? screenLogIn() : HomePage(),
-        theme: CustomTheme.lightTheme,
-        routes: {
-          "screenLogIn": ((context) => screenLogIn()),
-          "HomePage": ((context) => HomePage()),
-          "ElectricConsumMonitor": ((context) => ElectricConsumMonitor()),
-          "daily": ((context) => daily()),
-          "weekly": ((context) => weekly()),
-          "monthly": ((context) => monthy()),
-          "annual": ((context) => annual()),
-          "contactUs": ((context) => ContactUs()),
-        });
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: login == false ? screenLogIn() : HomePage(),
+      theme: CustomTheme.lightTheme,
+      routes: {
+        "screenLogIn": ((context) => screenLogIn()),
+        "HomePage": ((context) => HomePage()),
+        "ElectricConsumMonitor": ((context) => ElectricConsumMonitor()),
+        "daily": ((context) => daily()),
+        "weekly": ((context) => weekly()),
+        "monthly": ((context) => monthy()),
+        "annual": ((context) => annual()),
+        "contactUs": ((context) => ContactUs()),
+      },
+      //initialBinding: dep(),
+      translations: Translation(),
+      locale: Locale('en'),
+      fallbackLocale: Locale('en'),
+    );
   }
 
   monthly() {}

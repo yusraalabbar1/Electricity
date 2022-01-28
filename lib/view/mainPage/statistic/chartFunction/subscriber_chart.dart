@@ -2,6 +2,7 @@ import 'package:electricity/view/mainPage/statistic/chartFunction/subscriber_ser
 //import 'package:electricity/view/mainPage/statistic/chartFunction/subscriber_series.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:get/get.dart';
 
 class SubscriberChart extends StatelessWidget {
   final List<SubscriberSeries> data;
@@ -25,7 +26,7 @@ class SubscriberChart extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Text(
-              "Monthly Statistic",
+              "Monthly Statistic".tr,
               style: TextStyle(color: Colors.grey, fontSize: 15),
             ),
             Expanded(

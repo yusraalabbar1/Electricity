@@ -3,6 +3,7 @@ import 'package:electricity/model/pref.dart';
 import 'package:electricity/view/mainPage/consumptionMain/monitor.dart';
 import 'package:electricity/view/mainPage/consumptionMain/value_monitor.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 /*
 class ElectricConsumMonitor extends StatefulWidget {
@@ -24,10 +25,10 @@ class ElectricConsumMonitor extends StatelessWidget {
     return Column(
       children: [
         Container(
-            alignment: Alignment.topLeft,
+            //alignment: Alignment.topLeft,
             margin: EdgeInsets.all(20),
             child: Text(
-              "current Consumption",
+              "current Consumption".tr,
               style: Theme.of(context).textTheme.headline6,
             )),
         PhysicalModel(
@@ -60,10 +61,10 @@ class ElectricConsumMonitor extends StatelessWidget {
           ),
         ),
         Container(
-          alignment: Alignment.topLeft,
+          //alignment: Alignment.topLeft,
           margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
           child: Text(
-            "total Consumption since the start",
+            "total Consumption since the start".tr,
             style: Theme.of(context).textTheme.headline6,
           ),
         ),

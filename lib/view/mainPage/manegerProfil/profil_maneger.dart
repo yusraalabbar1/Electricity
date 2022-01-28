@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ListNote extends StatelessWidget {
   final notes;
@@ -37,7 +38,7 @@ class ListNote extends StatelessWidget {
                 flex: 1,
                 child: Container(
                     margin: EdgeInsets.only(left: 20),
-                    child: Text("First: ",
+                    child: Text("First:".tr,
                         style:
                             TextStyle(color: Colors.grey[600], fontSize: 20)))),
             Expanded(
@@ -60,7 +61,7 @@ class ListNote extends StatelessWidget {
                 flex: 1,
                 child: Container(
                     margin: EdgeInsets.only(left: 20),
-                    child: Text("Last: ",
+                    child: Text("Last:".tr,
                         style:
                             TextStyle(color: Colors.grey[600], fontSize: 20)))),
             Expanded(
@@ -83,7 +84,7 @@ class ListNote extends StatelessWidget {
                 flex: 1,
                 child: Container(
                     margin: EdgeInsets.only(left: 20),
-                    child: Text("Email: ",
+                    child: Text("Email:".tr,
                         style:
                             TextStyle(color: Colors.grey[600], fontSize: 20)))),
             Expanded(
@@ -106,7 +107,7 @@ class ListNote extends StatelessWidget {
                 flex: 1,
                 child: Container(
                     margin: EdgeInsets.only(left: 20),
-                    child: Text("Counter: ",
+                    child: Text("Counter:".tr,
                         style:
                             TextStyle(color: Colors.grey[600], fontSize: 20)))),
             Expanded(
@@ -134,7 +135,7 @@ class ListNote extends StatelessWidget {
                         onTap: () {
                           Navigator.of(context).pushNamed("contactUs");
                         },
-                        child: Text("contact us",
+                        child: Text("Contact Us".tr,
                             style: TextStyle(
                                 color: Color(0xff1C846B), fontSize: 15)),
                       )),
@@ -146,7 +147,7 @@ class ListNote extends StatelessWidget {
                     margin: EdgeInsets.all(30),
                     child: InkWell(
                       onTap: () {},
-                      child: Text("SignUp",
+                      child: Text("SignUp".tr,
                           style: TextStyle(
                               color: Color(0xff1C846B), fontSize: 15)),
                     )),

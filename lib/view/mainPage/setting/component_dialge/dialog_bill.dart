@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 var bill = "2000";
 
@@ -30,7 +31,7 @@ showLoading(context) {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        "How much do you want to pay?",
+                        "How much do you want to pay?".tr,
                         style: Theme.of(context).textTheme.headline6,
                       ),
                       SizedBox(
@@ -65,7 +66,7 @@ showLoading(context) {
                       Row(
                         children: [
                           RaisedButton(
-                            child: Text("ok"),
+                            child: Text("ok".tr),
                             onPressed: () {
                               var formdata = formstate.currentState;
                               if (formdata!.validate()) {
@@ -79,7 +80,7 @@ showLoading(context) {
                             width: 10,
                           ),
                           RaisedButton(
-                            child: Text("cancel"),
+                            child: Text("cancel".tr),
                             onPressed: () {
                               Navigator.of(context).pop();
                             },

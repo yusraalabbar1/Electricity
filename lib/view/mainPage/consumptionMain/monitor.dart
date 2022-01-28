@@ -3,7 +3,7 @@ import 'package:electricity/model/pref.dart';
 import 'package:electricity/view/mainPage/consumptionMain/value_monitor.dart';
 import 'package:electricity/view/mainPage/startSreen/logIn.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import 'Electric_consum_monitor.dart';
 
 class monitor extends StatefulWidget {
@@ -63,7 +63,7 @@ class _monitorState extends State<monitor> {
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
         title: Text(
-          " Electric Consumption Monitor",
+          "Electric Consumption Monitor".tr,
           style: Theme.of(context).appBarTheme.titleTextStyle,
         ),
       ),
