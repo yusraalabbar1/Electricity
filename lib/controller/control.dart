@@ -1,10 +1,11 @@
+import 'package:electricity/model/pref.dart';
 import 'package:electricity/view/mainPage/setting/component_dialge/dialog_bill.dart';
 import 'package:get/get.dart';
 
 class homecontroller extends GetxController {
   var limitBill;
   changeBill() {
-    limitBill = int.parse(bill);
+    limitBill = bill;
     update();
   }
 

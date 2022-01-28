@@ -146,6 +146,8 @@ class ListNote extends StatelessWidget {
                     child: InkWell(
                       onTap: () {
                         islogin = "false";
+                        bill = "";
+                        saveprefsignUp();
                         Navigator.of(context)
                             .pushReplacementNamed("screenLogIn");
                       },

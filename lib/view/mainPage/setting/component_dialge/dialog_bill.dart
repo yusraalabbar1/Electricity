@@ -1,9 +1,10 @@
 import 'package:electricity/controller/control.dart';
+import 'package:electricity/model/pref.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-var bill = "2000";
+// var bill = getprefBill();
 
 GlobalKey<FormState> formstate = new GlobalKey<FormState>();
 homecontroller controller = Get.find();
@@ -50,6 +51,7 @@ showLoading(context) {
                               onSaved: (string) {
                                 bill = string!;
                                 controller.changeBill();
+                                saveprefBill();
                               },
                             ),
                           ),

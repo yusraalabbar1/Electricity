@@ -18,7 +18,6 @@ class _monitorState extends State<monitor> {
   void initState() {
     super.initState();
     getprefNumberAcount();
-    // nastedupdateCollectionTotal();
   }
 
   @override
@@ -46,8 +45,7 @@ class _monitorState extends State<monitor> {
               return Dismissible(
                   key: Key("$index"),
                   child: ElectricConsumMonitor(
-                      notes: snapshot.data.docs[int.parse(numberAcount) - 1]
-                          .data()));
+                      notes: snapshot.data.docs[index].data()));
             },
           );
         },

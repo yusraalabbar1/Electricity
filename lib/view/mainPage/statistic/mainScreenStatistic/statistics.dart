@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:electricity/view/mainPage/setting/physical_stat.dart';
 import 'package:electricity/view/mainPage/statistic/chartFunction/value_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -70,30 +71,7 @@ class _statisticsState extends State<statistics> {
                         style: Theme.of(context).textTheme.headline6,
                       ),
                     ),
-                    PhysicalModel(
-                      color: Colors.teal,
-                      elevation: 8,
-                      shadowColor: Colors.grey,
-                      borderRadius: BorderRadius.circular(100),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushNamed("daily");
-                        },
-                        child: ClipOval(
-                          child: Container(
-                            color: Colors.white,
-                            height: 140.0,
-                            width: 140.0,
-                            child: Center(
-                                child: Text(
-                              '$daily',
-                              style: Theme.of(context).textTheme.headline4,
-                              textAlign: TextAlign.center,
-                            )),
-                          ),
-                        ),
-                      ),
-                    ),
+                    physicalModel(context, "daily", daily),
                   ],
                 ),
               ),
@@ -108,30 +86,7 @@ class _statisticsState extends State<statistics> {
                         style: Theme.of(context).textTheme.headline6,
                       ),
                     ),
-                    PhysicalModel(
-                      color: Colors.teal,
-                      elevation: 8,
-                      shadowColor: Colors.grey,
-                      borderRadius: BorderRadius.circular(100),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushNamed("weekly");
-                        },
-                        child: ClipOval(
-                          child: Container(
-                            color: Colors.white,
-                            height: 140.0,
-                            width: 140.0,
-                            child: Center(
-                                child: Text(
-                              '$weekly',
-                              style: Theme.of(context).textTheme.headline4,
-                              textAlign: TextAlign.center,
-                            )),
-                          ),
-                        ),
-                      ),
-                    ),
+                    physicalModel(context, "weekly", weekly),
                   ],
                 ),
               ),
@@ -150,30 +105,7 @@ class _statisticsState extends State<statistics> {
                         style: Theme.of(context).textTheme.headline6,
                       ),
                     ),
-                    PhysicalModel(
-                      color: Colors.teal,
-                      elevation: 8,
-                      shadowColor: Colors.grey,
-                      borderRadius: BorderRadius.circular(100),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushNamed("monthly");
-                        },
-                        child: ClipOval(
-                          child: Container(
-                            color: Colors.white,
-                            height: 140.0,
-                            width: 140.0,
-                            child: Center(
-                                child: Text(
-                              '$monthly',
-                              style: Theme.of(context).textTheme.headline4,
-                              textAlign: TextAlign.center,
-                            )),
-                          ),
-                        ),
-                      ),
-                    ),
+                    physicalModel(context, "monthly", monthly),
                   ],
                 ),
               ),
@@ -188,30 +120,7 @@ class _statisticsState extends State<statistics> {
                         style: Theme.of(context).textTheme.headline6,
                       ),
                     ),
-                    PhysicalModel(
-                      color: Colors.teal,
-                      elevation: 8,
-                      shadowColor: Colors.grey,
-                      borderRadius: BorderRadius.circular(100),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushNamed("annual");
-                        },
-                        child: ClipOval(
-                          child: Container(
-                            color: Colors.white,
-                            height: 140.0,
-                            width: 140.0,
-                            child: Center(
-                                child: Text(
-                              '$annual',
-                              style: Theme.of(context).textTheme.headline4,
-                              textAlign: TextAlign.center,
-                            )),
-                          ),
-                        ),
-                      ),
-                    ),
+                    physicalModel(context, "annual", annual),
                     SizedBox(
                       height: 20,
                     )

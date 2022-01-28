@@ -5,6 +5,7 @@ import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'componentDialogAuth/dialogsUth.dart';
 
 var numberAcount;
+var idAcount;
 List ids = [];
 
 class screenLogIn extends StatefulWidget {
@@ -20,6 +21,7 @@ class _screenLogInState extends State<screenLogIn> {
   bool _isObscure = true;
   var passWord;
   List a = [];
+  List ids = [];
 
   FocusNode myFocusNode = new FocusNode();
   Future send() async {
@@ -38,6 +40,13 @@ class _screenLogInState extends State<screenLogIn> {
           if (a[i]['password'].toString() == passWord.toString()) {
             await savepref();
             await saveprefNumberAcount();
+            await saveprefIdAcount();
+            print("=======id=========");
+            idAcount = ids[i];
+
+            await saveprefIdAcount();
+            print(idAcount);
+            print("=======id=========");
             Navigator.of(context).pushReplacementNamed("HomePage");
           } else {
             dialogePasswordFalse(context);
@@ -59,6 +68,7 @@ class _screenLogInState extends State<screenLogIn> {
         .listen((event) {
       event.docs.forEach((element) {
         ids.add(element.id);
+
         a.add(element.data());
       });
       print("================================");

@@ -3,7 +3,6 @@ import 'package:electricity/view/mainPage/startSreen/routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
 import 'model/pref.dart';
 
 var select = 1;
@@ -16,6 +15,8 @@ void main() async {
   var user = FirebaseAuth.instance.currentUser;
   print("****************************");
   await getpref();
+  await getprefIdAcount();
+  await getprefBill();
   print("****************************");
   if (islogin == "true") {
     login = true;
