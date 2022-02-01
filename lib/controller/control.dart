@@ -4,14 +4,21 @@ import 'package:get/get.dart';
 
 class homecontroller extends GetxController {
   var limitBill;
+  var notific;
+  var notificSms;
+
   changeBill() {
     limitBill = bill;
     update();
   }
 
-  int counter = 0;
-  void incremental() {
-    counter++;
+  OnNotification() {
+    notific = notification;
+    update();
+  }
+
+  OnSmsNotification() {
+    notificSms = notificationSMS;
     update();
   }
 
@@ -21,6 +28,8 @@ class homecontroller extends GetxController {
     print("init home controller");
     super.onInit();
     changeBill();
+    OnNotification();
+    OnSmsNotification();
   }
 
   @override

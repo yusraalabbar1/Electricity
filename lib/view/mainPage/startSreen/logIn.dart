@@ -3,6 +3,9 @@ import 'package:electricity/model/pref.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'componentDialogAuth/dialogsUth.dart';
+import 'package:get/get.dart';
+
+import 'package:loading_indicator/loading_indicator.dart';
 
 var numberAcount;
 var idAcount;
@@ -47,6 +50,7 @@ class _screenLogInState extends State<screenLogIn> {
             await saveprefIdAcount();
             print(idAcount);
             print("=======id=========");
+            dialogeinfoTrue(context);
             Navigator.of(context).pushReplacementNamed("HomePage");
           } else {
             dialogePasswordFalse(context);
@@ -121,6 +125,7 @@ class _screenLogInState extends State<screenLogIn> {
                     margin: EdgeInsets.only(left: 25, right: 25),
                     child: TextFormField(
                       keyboardType: TextInputType.number,
+                      textInputAction: TextInputAction.next,
                       decoration: InputDecoration(
                         suffixIcon: Icon(
                           Icons.format_list_numbered,
@@ -130,10 +135,15 @@ class _screenLogInState extends State<screenLogIn> {
                             color: myFocusNode.hasFocus
                                 ? Color(0xffFAB10C)
                                 : Colors.black),
-                        labelText: " Number counter  ",
+                        labelText: " Number counter  ".tr,
                       ),
-                      // autovalidateMode: AutovalidateMode.always,
-
+                      autovalidateMode: AutovalidateMode.always,
+                      validator: (text) {
+                        if (text!.length > 5) {
+                          return "can not enter bigerr than 5";
+                        }
+                        return null;
+                      },
                       onSaved: (string) {
                         numberAcount = string;
                       },
@@ -146,6 +156,7 @@ class _screenLogInState extends State<screenLogIn> {
                     margin: EdgeInsets.only(left: 25, right: 25),
                     child: TextFormField(
                       obscureText: _isObscure,
+                      textInputAction: TextInputAction.next,
                       decoration: InputDecoration(
                         suffixIcon: IconButton(
                             icon: Icon(_isObscure
@@ -160,10 +171,15 @@ class _screenLogInState extends State<screenLogIn> {
                             color: myFocusNode.hasFocus
                                 ? Color(0xffFAB10C)
                                 : Colors.black),
-                        labelText: " Password  ",
+                        labelText: " Password  ".tr,
                       ),
-                      // autovalidateMode: AutovalidateMode.always,
-
+                      autovalidateMode: AutovalidateMode.always,
+                      validator: (text) {
+                        if (text!.length < 3) {
+                          return "can not enter less than 3";
+                        }
+                        return null;
+                      },
                       onSaved: (string) {
                         passWord = string;
                       },
@@ -184,7 +200,7 @@ class _screenLogInState extends State<screenLogIn> {
                 //
               },
               child: Text(
-                "Log In",
+                "Log In".tr,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,

@@ -4,6 +4,7 @@ import 'package:electricity/view/mainPage/statistic/chartFunction/subscriber_ser
 import 'package:electricity/view/mainPage/statistic/chartFunction/value_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:get/get.dart';
 
 class monthy extends StatefulWidget {
   monthy({Key? key}) : super(key: key);
@@ -24,38 +25,63 @@ class _monthyState extends State<monthy> {
 
   final List<SubscriberSeries> data = [
     SubscriberSeries(
-      day: "Sun",
+      day: "1",
       subscribers: a[0]['Sunday'],
       barColor: charts.ColorUtil.fromDartColor(Color(0xff21C49D)),
     ),
     SubscriberSeries(
-      day: "Mon",
+      day: "2",
       subscribers: a[0]['Monday'],
       barColor: charts.ColorUtil.fromDartColor(Color(0xff21C49D)),
     ),
     SubscriberSeries(
-      day: "Tue",
+      day: "3",
       subscribers: a[0]['Tuesday'],
       barColor: charts.ColorUtil.fromDartColor(Color(0xff21C49D)),
     ),
     SubscriberSeries(
-      day: "Wed",
+      day: "4",
       subscribers: a[0]['Wednesday'],
       barColor: charts.ColorUtil.fromDartColor(Color(0xff21C49D)),
     ),
     SubscriberSeries(
-      day: "Thu",
+      day: "5",
       subscribers: a[0]['Thursday'],
       barColor: charts.ColorUtil.fromDartColor(Color(0xff21C49D)),
     ),
     SubscriberSeries(
-      day: "Fri",
+      day: "6",
       subscribers: a[0]['Friday'],
       barColor: charts.ColorUtil.fromDartColor(Color(0xff21C49D)),
     ),
     SubscriberSeries(
-      day: "Sat",
+      day: "7",
       subscribers: a[0]['Saturday'],
+      barColor: charts.ColorUtil.fromDartColor(Color(0xff21C49D)),
+    ),
+    SubscriberSeries(
+      day: "8",
+      subscribers: a[0]['Saturday'],
+      barColor: charts.ColorUtil.fromDartColor(Color(0xff21C49D)),
+    ),
+    SubscriberSeries(
+      day: "9",
+      subscribers: a[0]['Friday'],
+      barColor: charts.ColorUtil.fromDartColor(Color(0xff21C49D)),
+    ),
+    SubscriberSeries(
+      day: "10",
+      subscribers: a[0]['Wednesday'],
+      barColor: charts.ColorUtil.fromDartColor(Color(0xff21C49D)),
+    ),
+    SubscriberSeries(
+      day: "11",
+      subscribers: a[0]['Tuesday'],
+      barColor: charts.ColorUtil.fromDartColor(Color(0xff21C49D)),
+    ),
+    SubscriberSeries(
+      day: "12",
+      subscribers: a[0]['Wednesday'],
       barColor: charts.ColorUtil.fromDartColor(Color(0xff21C49D)),
     ),
   ];
@@ -64,7 +90,7 @@ class _monthyState extends State<monthy> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Monthly Statistic"),
+          title: Text("monthly Statistic".tr),
         ),
         body: ListView(
           children: [
@@ -75,7 +101,7 @@ class _monthyState extends State<monthy> {
             Container(
               margin: EdgeInsets.all(30),
               child: Text(
-                "Chart of consumtion for the last 7 day",
+                "Chart of consumtion for the last 12 month".tr,
                 style: TextStyle(color: Colors.grey, fontSize: 20),
               ),
             ),
@@ -95,7 +121,7 @@ class _monthyState extends State<monthy> {
                           child: Container(
                             margin: EdgeInsets.all(20),
                             child: Text(
-                                "All numbers shown are in killowatt-hours",
+                                "All numbers shown are in killowatt-hours".tr,
                                 style: TextStyle(
                                     color: Colors.grey[400], fontSize: 20)),
                           ))
@@ -106,45 +132,3 @@ class _monthyState extends State<monthy> {
         ));
   }
 }
-
-
-
-/*
- ListView(
-          children: [
-            Center(
-                child: SubscriberChart(
-              data: data,
-            )),
-            Container(
-              margin: EdgeInsets.all(30),
-              child: Text(
-                "Chart of consumtion for the last 7 day",
-                style: TextStyle(color: Colors.grey, fontSize: 20),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.all(20),
-              child: Card(
-                  elevation: 0.0,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: IconButton(
-                            onPressed: () {}, icon: Icon(Icons.info)),
-                      ),
-                      Expanded(
-                          flex: 4,
-                          child: Container(
-                            margin: EdgeInsets.all(20),
-                            child: Text(
-                                "All numbers shown are in killowatt-hours",
-                                style: TextStyle(
-                                    color: Colors.grey[400], fontSize: 20)),
-                          ))
-                    ],
-                  )),
-            ),
-          ],
-        )*/

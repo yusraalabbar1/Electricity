@@ -4,6 +4,38 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 var islogin = "false";
 var bill;
+var notification;
+var notificationSMS;
+saveprefOnNotificatinSMS() async {
+  SharedPreferences pres = await SharedPreferences.getInstance();
+  pres.setString('notification', notificationSMS);
+}
+
+getprefOnNotificatinSMS() async {
+  SharedPreferences pres = await SharedPreferences.getInstance();
+  notificationSMS = pres.getString('notification');
+  if (notificationSMS == null || notificationSMS == "") {
+    notificationSMS = "OFF";
+    print("notification in pref not init");
+  }
+  print("notification in pref: " + notificationSMS);
+}
+
+saveprefOnNotificatin() async {
+  SharedPreferences pres = await SharedPreferences.getInstance();
+  pres.setString('notification', notification);
+}
+
+getprefOnNotificatin() async {
+  SharedPreferences pres = await SharedPreferences.getInstance();
+  notification = pres.getString('notification');
+  if (notification == null || notification == "") {
+    notification = "OFF";
+    print("notification in pref not init");
+  }
+  print("notification in pref: " + notification);
+}
+
 savepref() async {
   SharedPreferences pres = await SharedPreferences.getInstance();
   pres.setString('isLogin', 'true');

@@ -24,7 +24,7 @@ class _sittingState extends State<sitting> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "setting",
+          "Settings".tr,
           style: Theme.of(context).appBarTheme.titleTextStyle,
         ),
       ),
@@ -35,7 +35,7 @@ class _sittingState extends State<sitting> {
               builder: (controller) {
                 return (Card(
                     child: ListTile(
-                  title: Text("Bill Limit"),
+                  title: Text("Bill Limit".tr),
                   subtitle: Text("${controller.limitBill}"),
                   trailing: Image.asset("images/setting.PNG"),
                   leading: Icon(Icons.settings),
@@ -45,34 +45,40 @@ class _sittingState extends State<sitting> {
                   },
                 )));
               }),
+          GetBuilder<homecontroller>(
+              init: homecontroller(),
+              builder: (controller) {
+                return (Card(
+                    child: ListTile(
+                  title: Text("Notification".tr),
+                  subtitle: Text("${controller.notific}".tr),
+                  trailing: Image.asset("images/setting.PNG"),
+                  leading: Icon(Icons.notification_add),
+                  onTap: () async {
+                    dialogeNotification(context);
+                    controller.OnNotification();
+                  },
+                )));
+              }),
+          GetBuilder<homecontroller>(
+              init: homecontroller(),
+              builder: (controller) {
+                return (Card(
+                    child: ListTile(
+                  title: Text("SMS notificatin".tr),
+                  subtitle: Text("${controller.notificSms}".tr),
+                  trailing: Image.asset("images/setting.PNG"),
+                  leading: Icon(Icons.send_to_mobile),
+                  onTap: () async {
+                    dialogeNotificationSms(context);
+                    controller.OnSmsNotification();
+                  },
+                )));
+              }),
           Card(
               child: ListTile(
-            title: Text("Notification"),
-            subtitle: Text("ON"),
-            trailing: Image.asset("images/setting.PNG"),
-            leading: Icon(Icons.notification_add),
-            onTap: () {
-              setState(() {
-                dialogeNotification(context);
-              });
-            },
-          )),
-          Card(
-              child: ListTile(
-            title: Text("SMS notificatin"),
-            subtitle: Text("OFF"),
-            trailing: Image.asset("images/setting.PNG"),
-            leading: Icon(Icons.send_to_mobile),
-            onTap: () {
-              setState(() {
-                dialogeNotificationSms(context);
-              });
-            },
-          )),
-          Card(
-              child: ListTile(
-            title: Text("Language"),
-            subtitle: Text("English"),
+            title: Text("Language".tr),
+            subtitle: Text("English & Arabic".tr),
             trailing: Image.asset("images/setting.PNG"),
             leading: Icon(Icons.language),
             onTap: () {
@@ -83,8 +89,7 @@ class _sittingState extends State<sitting> {
           )),
           Card(
               child: ListTile(
-            title: Text("Data Clear"),
-            subtitle: Text("clear.."),
+            title: Text("Clear Data".tr),
             trailing: Image.asset("images/setting.PNG"),
             leading: Icon(Icons.delete),
             onTap: () {

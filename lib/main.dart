@@ -20,6 +20,8 @@ void main() async {
   await getpref();
   await getprefIdAcount();
   await getprefBill();
+  await getprefOnNotificatin();
+  await getprefOnNotificatinSMS();
   print("****************************");
   if (islogin == "true") {
     login = true;

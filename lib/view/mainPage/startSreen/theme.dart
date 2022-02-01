@@ -14,9 +14,9 @@ abstract class CustomTheme {
           elevation: 5.2,
           centerTitle: true,
           titleTextStyle: TextStyle(
-            color: Color(0xff21C49D),
-            fontSize: 20,
-          ),
+              color: Color(0xff21C49D),
+              fontSize: 20,
+              fontWeight: FontWeight.bold),
         ),
         ///////////////////////////////////
         inputDecorationTheme: InputDecorationTheme(
