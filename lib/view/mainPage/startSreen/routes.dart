@@ -2,6 +2,7 @@
 import 'package:electricity/main.dart';
 import 'package:electricity/view/mainPage/contact/contact.dart';
 import 'package:electricity/view/mainPage/manegerProfil/edit_image.dart';
+import 'package:electricity/view/mainPage/setting/setting.dart';
 import 'package:electricity/view/mainPage/startSreen/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         "annual": ((context) => annual()),
         "contactUs": ((context) => ContactUs()),
         "ImageUploads": ((context) => ImageUploads()),
+        "sitting": ((context) => sitting()),
         // "contactUs": ((context) => ContactUs()),
       },
       translations: Translation(),

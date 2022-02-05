@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:electricity/controller/control.dart';
+import 'package:electricity/view/mainPage/startSreen/logIn.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'component_dialge/dialge_clear.dart';
 import 'component_dialge/dialog_bill.dart';
@@ -6,6 +10,7 @@ import 'component_dialge/dialog_notifcation.dart';
 import 'component_dialge/dialogeSms.dart';
 import 'component_dialge/dialoge_language.dart';
 
+import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
@@ -18,6 +23,62 @@ class sitting extends StatefulWidget {
 
 class _sittingState extends State<sitting> {
   GlobalKey<ScaffoldState> scaffoldkey = new GlobalKey<ScaffoldState>();
+
+  var serverToken =
+      "AAAAzE5CCe0:APA91bHV_KvwT8xwC5MZBxYk_W356V2Mam6mv1M3ZPylitlKHIxfvi-m4SKLKp24CQNj8f2pLjuS6xpAZdATNyH1w0pD10erS8h1z4nOI3TJ6xpvb96xfRdIAxTowpVhFkr-TSh9owzS";
+
+  sendNotfiy(String title, String body) async {
+    await http.post(
+      Uri.parse("https://fcm.googleapis.com/fcm/send"),
+      headers: <String, String>{
+        'Content-Type': 'application/json',
+        'Authorization': 'key=$serverToken',
+      },
+      body: jsonEncode(
+        <String, dynamic>{
+          'notification': <String, dynamic>{
+            'body': body.toString(),
+            'title': title.toString()
+          },
+          'priority': 'high',
+          'data': <String, dynamic>{
+            'click_action': 'FLUTTER_NOTIFICATION_CLICK',
+            'idAccount': idAcount.toString()
+          },
+          // 'to': await FirebaseMessaging.instance.getToken() // token
+
+          'to': "/topics/ysra" // topic
+        },
+      ),
+    );
+  }
+
+  getMessage() {
+    FirebaseMessaging.onMessage.listen((event) {
+      print("====================================");
+      print(event.notification!.title);
+      print(event.notification!.body);
+      print(event.data);
+      print("====================================");
+    });
+  }
+
+  // sub() async {
+  //   await FirebaseMessaging.instance.subscribeToTopic('ysra');
+  // }
+
+  // unsub() async {
+  //   await FirebaseMessaging.instance.unsubscribeFromTopic('ysra');
+  // }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // sub();
+    // unsub();
+    // getMessage();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +98,12 @@ class _sittingState extends State<sitting> {
                     child: ListTile(
                   title: Text("Bill Limit".tr),
                   subtitle: Text("${controller.limitBill}"),
-                  trailing: Image.asset("images/setting.PNG"),
+                  trailing: InkWell(
+                    child: Image.asset("images/pay2.png"),
+                    onTap: () {
+                      sendNotfiy("pay", "pay");
+                    },
+                  ),
                   leading: Icon(Icons.settings),
                   onTap: () async {
                     showLoading(context);
@@ -52,7 +118,7 @@ class _sittingState extends State<sitting> {
                     child: ListTile(
                   title: Text("Notification".tr),
                   subtitle: Text("${controller.notific}".tr),
-                  trailing: Image.asset("images/setting.PNG"),
+                  trailing: Image.asset("images/not2.jpg"),
                   leading: Icon(Icons.notification_add),
                   onTap: () async {
                     dialogeNotification(context);
@@ -67,7 +133,7 @@ class _sittingState extends State<sitting> {
                     child: ListTile(
                   title: Text("SMS notificatin".tr),
                   subtitle: Text("${controller.notificSms}".tr),
-                  trailing: Image.asset("images/setting.PNG"),
+                  trailing: Image.asset("images/sms2.png"),
                   leading: Icon(Icons.send_to_mobile),
                   onTap: () async {
                     dialogeNotificationSms(context);
@@ -79,7 +145,7 @@ class _sittingState extends State<sitting> {
               child: ListTile(
             title: Text("Language".tr),
             subtitle: Text("English & Arabic".tr),
-            trailing: Image.asset("images/setting.PNG"),
+            trailing: Image.asset("images/l2.png"),
             leading: Icon(Icons.language),
             onTap: () {
               setState(() {
@@ -90,7 +156,8 @@ class _sittingState extends State<sitting> {
           Card(
               child: ListTile(
             title: Text("Clear Data".tr),
-            trailing: Image.asset("images/setting.PNG"),
+            subtitle: Text("Clear Data".tr),
+            trailing: Image.asset("images/del2.png"),
             leading: Icon(Icons.delete),
             onTap: () {
               setState(() {

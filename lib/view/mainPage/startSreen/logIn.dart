@@ -137,7 +137,7 @@ class _screenLogInState extends State<screenLogIn> {
                                 : Colors.black),
                         labelText: " Number counter  ".tr,
                       ),
-                      autovalidateMode: AutovalidateMode.always,
+                      // autovalidateMode: AutovalidateMode.always,
                       validator: (text) {
                         if (text!.length > 5) {
                           return "can not enter bigerr than 5";

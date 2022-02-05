@@ -1,8 +1,17 @@
 import 'package:electricity/controller/control.dart';
 import 'package:electricity/model/pref.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:get/get.dart';
+
+sub() async {
+  await FirebaseMessaging.instance.subscribeToTopic('ysra');
+}
+
+unsub() async {
+  await FirebaseMessaging.instance.unsubscribeFromTopic('ysra');
+}
 
 homecontroller controller = Get.find();
 dialogeNotification(context) {
@@ -32,6 +41,7 @@ dialogeNotification(context) {
                         child: Text("Yes".tr),
                         onPressed: () async {
                           notification = "ON";
+                          sub();
                           controller.OnNotification();
                           await saveprefOnNotificatin();
                           Navigator.of(context).pop();
@@ -56,6 +66,7 @@ dialogeNotification(context) {
                         child: Text("No".tr),
                         onPressed: () async {
                           notification = "OFF";
+                          unsub();
                           controller.OnNotification();
                           await saveprefOnNotificatin();
 
