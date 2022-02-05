@@ -173,7 +173,7 @@ class _screenLogInState extends State<screenLogIn> {
                                 : Colors.black),
                         labelText: " Password  ".tr,
                       ),
-                      autovalidateMode: AutovalidateMode.always,
+                      // autovalidateMode: AutovalidateMode.always,
                       validator: (text) {
                         if (text!.length < 3) {
                           return "can not enter less than 3";

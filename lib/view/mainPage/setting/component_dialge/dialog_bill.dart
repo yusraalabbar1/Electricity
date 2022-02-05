@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:electricity/controller/control.dart';
 import 'package:electricity/model/pref.dart';
+import 'package:electricity/view/mainPage/startSreen/logIn.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -52,6 +54,11 @@ showLoading(context) {
                                 bill = string!;
                                 controller.changeBill();
                                 saveprefBill();
+                                int lim = int.parse(bill);
+                                FirebaseFirestore.instance
+                                    .collection('informationUsers')
+                                    .doc("$idAcount")
+                                    .update({'limit': lim});
                               },
                             ),
                           ),

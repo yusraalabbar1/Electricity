@@ -10,7 +10,6 @@ import 'component_dialge/dialog_notifcation.dart';
 import 'component_dialge/dialogeSms.dart';
 import 'component_dialge/dialoge_language.dart';
 
-import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
@@ -23,45 +22,6 @@ class sitting extends StatefulWidget {
 
 class _sittingState extends State<sitting> {
   GlobalKey<ScaffoldState> scaffoldkey = new GlobalKey<ScaffoldState>();
-
-  var serverToken =
-      "AAAAzE5CCe0:APA91bHV_KvwT8xwC5MZBxYk_W356V2Mam6mv1M3ZPylitlKHIxfvi-m4SKLKp24CQNj8f2pLjuS6xpAZdATNyH1w0pD10erS8h1z4nOI3TJ6xpvb96xfRdIAxTowpVhFkr-TSh9owzS";
-
-  sendNotfiy(String title, String body) async {
-    await http.post(
-      Uri.parse("https://fcm.googleapis.com/fcm/send"),
-      headers: <String, String>{
-        'Content-Type': 'application/json',
-        'Authorization': 'key=$serverToken',
-      },
-      body: jsonEncode(
-        <String, dynamic>{
-          'notification': <String, dynamic>{
-            'body': body.toString(),
-            'title': title.toString()
-          },
-          'priority': 'high',
-          'data': <String, dynamic>{
-            'click_action': 'FLUTTER_NOTIFICATION_CLICK',
-            'idAccount': idAcount.toString()
-          },
-          // 'to': await FirebaseMessaging.instance.getToken() // token
-
-          'to': "/topics/ysra" // topic
-        },
-      ),
-    );
-  }
-
-  getMessage() {
-    FirebaseMessaging.onMessage.listen((event) {
-      print("====================================");
-      print(event.notification!.title);
-      print(event.notification!.body);
-      print(event.data);
-      print("====================================");
-    });
-  }
 
   // sub() async {
   //   await FirebaseMessaging.instance.subscribeToTopic('ysra');
@@ -101,7 +61,7 @@ class _sittingState extends State<sitting> {
                   trailing: InkWell(
                     child: Image.asset("images/pay2.png"),
                     onTap: () {
-                      sendNotfiy("pay", "pay");
+                      // sendNotfiy("pay", "pay");
                     },
                   ),
                   leading: Icon(Icons.settings),

@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:electricity/translation/app_languge_controller.dart';
+import 'package:electricity/view/mainPage/consumptionMain/value_monitor.dart';
 import 'package:electricity/view/mainPage/contact/contact.dart';
 import 'package:electricity/view/mainPage/manegerProfil/profil.dart';
 import 'package:electricity/view/mainPage/setting/setting.dart';
@@ -26,6 +27,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var lim;
   getToken() async {
     var token = await FirebaseMessaging.instance.getToken();
     DocumentReference users = FirebaseFirestore.instance
@@ -65,10 +67,70 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  var serverToken =
+      "AAAAzE5CCe0:APA91bHV_KvwT8xwC5MZBxYk_W356V2Mam6mv1M3ZPylitlKHIxfvi-m4SKLKp24CQNj8f2pLjuS6xpAZdATNyH1w0pD10erS8h1z4nOI3TJ6xpvb96xfRdIAxTowpVhFkr-TSh9owzS";
+
+  sendNotfiy(String title, String body) async {
+    await http.post(
+      Uri.parse("https://fcm.googleapis.com/fcm/send"),
+      headers: <String, String>{
+        'Content-Type': 'application/json',
+        'Authorization': 'key=$serverToken',
+      },
+      body: jsonEncode(
+        <String, dynamic>{
+          'notification': <String, dynamic>{
+            'body': body.toString(),
+            'title': title.toString()
+          },
+          'priority': 'high',
+          'data': <String, dynamic>{
+            'click_action': 'FLUTTER_NOTIFICATION_CLICK',
+            'idAccount': idAcount.toString()
+          },
+          // 'to': await FirebaseMessaging.instance.getToken() // token
+
+          'to': "/topics/ysra" // topic
+        },
+      ),
+    );
+  }
+
+  getMessage() {
+    FirebaseMessaging.onMessage.listen((event) {
+      print("====================================");
+      print(event.notification!.title);
+      print(event.notification!.body);
+      print(event.data);
+      print("====================================");
+    });
+  }
+
+  validNotification() async {
+    var users = FirebaseFirestore.instance
+        .collection('informationUsers')
+        .doc("$idAcount");
+    await users.get().then((value) => {value.data()});
+    await FirebaseFirestore.instance
+        .collection("informationUsers")
+        .doc("$idAcount")
+        .snapshots()
+        .listen((event) {
+      setState(() {
+        lim = event.get("limit");
+        print(lim);
+        if (lim >= 100) {
+          sendNotfiy(
+              "title", "you have exceeded your electriciy consmption limit");
+        }
+      });
+    });
+  }
+
   @override
   void initState() {
     super.initState();
-
+    validNotification();
     requestPermission();
     initalMessage();
     getToken();
@@ -78,12 +140,12 @@ class _HomePageState extends State<HomePage> {
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       print('Got a message whilst in the foreground!');
-      print('Message data: ${message.notification!.body}');
+      print('Message notification: ${message.notification!.body}');
       AwesomeDialog(
         context: context,
         dialogType: DialogType.INFO_REVERSED,
         borderSide: BorderSide(color: Colors.green, width: 2),
-        width: 280,
+        // width: 280,
         buttonsBorderRadius: BorderRadius.all(Radius.circular(2)),
         headerAnimationLoop: false,
         animType: AnimType.BOTTOMSLIDE,
@@ -91,10 +153,11 @@ class _HomePageState extends State<HomePage> {
         desc: 'Message data: ${message.notification!.body}.',
         showCloseIcon: true,
         btnCancelOnPress: () {
-          Navigator.of(context).pop();
+          // Navigator.of(context).pop();
         },
         btnOkOnPress: () {
-          Navigator.of(context).pushNamed("sitting");
+          // Navigator.of(context).pop();
+          // Navigator.of(context).pushNamed("sitting");
         },
       )..show();
       if (message.notification != null) {
