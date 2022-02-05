@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-// var bill = getprefBill();
-
 GlobalKey<FormState> formstate = new GlobalKey<FormState>();
 homecontroller controller = Get.find();
 showLoading(context) {
